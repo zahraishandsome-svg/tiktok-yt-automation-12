@@ -1,0 +1,32 @@
+# TikTok to YouTube Channel Pairs
+#
+# ch12 - onboarded 2026-07-28. Own repo + own GCP project under the channel's own
+# Gmail (najmakhan7868@gmail.com), keeping every channel's identity de-correlated.
+
+channels:
+  - id: channel_12
+    tiktok_username: "crs_extra"
+    youtube_channel_name: "crs_extra"
+    # No fixed_title - the TikTok caption is used as the YouTube title.
+    google_credentials_file: "credentials/channel_12_client_secret.json"
+    oauth_token_file: "tokens/channel_12_token.json"
+    videos_per_day: 2
+    description_footer: ""
+    default_tags:
+      - legoengine
+      - engineering
+      - viral
+      - trending
+    youtube_category_id: "28"      # Science & Technology
+    enabled: true
+    max_retry_days: 7
+    shorts_max_seconds: 180
+    upload_mode: popular_split
+    # Slot 1 = newest unposted TikTok. Slot 2 = most-VIEWED unposted TikTok
+    # (across the whole profile). Both upload as Shorts - the profile's longest
+    # video is 42s, so nothing here is ever longform.
+    max_download_candidates: 20
+    # US audience - timed for evening prime time on the east coast.
+    slot_publish_times_utc:
+      1: "22:00"   # PUBLIC at 6 PM ET (3 PM PT)
+      2: "00:00"   # PUBLIC at 8 PM ET (5 PM PT)
